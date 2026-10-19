@@ -1,0 +1,31 @@
+<div>
+<h2>Liste des pays</h2>
+<ul>
+@for (element of countries; track element.name) {
+    @if (element.name !== "Israel") {
+<table class="table">
+          <thead>
+    <tr>
+      <th scope="col" style="width: 30%;">nom</th>
+      <th scope="col" style="width: 30%;">capitale</th>
+      <th scope="col" style="width: 40%;">area</th>
+      <th scope="col" style="width: 40%;">population</th>
+      <th scope="col" style="width: 40%;">drapeau</th>
+    </tr>
+  </thead>
+         <tbody>
+                 
+             <tr>
+                 <td>{{ element.name }}</td>
+                 <td>{{ element.capital }}</td>
+                 <td>{{ element.area }}</td>
+                 <td>{{ element.population }}</td>
+                                  <td><img [src]="element.flags.png" alt="Drapeau de {{ element.name }}" width="100"></td>
+
+             </tr>
+            
+            </tbody>
+</table>
+}}
+</ul>
+</div>

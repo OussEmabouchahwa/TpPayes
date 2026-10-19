@@ -1,0 +1,21 @@
+<div>
+<h2>Rechercher un pays</h2>
+<input
+type="text"
+[(ngModel)]="nom"
+placeholder="Nom du pays">
+
+<button (click)="recherche()">Rechercher</button>
+<p>{{ erreur }}</p>
+
+@if (resultat) {
+<div>
+<p>Code : {{ resultat.alpha2Code }}</p>
+<p>Nom : {{ resultat.name }}</p>
+<p>Capitale : {{ resultat.capital }}</p>
+<p>Flag <img [src]="resultat.flags.png" alt="Drapeau de {{ resultat.name }}" width="100"></p>
+<p>Population : {{ resultat.population }}</p>
+<p>Superficie : {{ resultat.area }}</p>
+</div>
+}
+</div>
